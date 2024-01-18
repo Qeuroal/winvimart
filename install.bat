@@ -1,4 +1,4 @@
-@echo on
+@echo off
 
 set curDir=%CD%
 set vimConfigPath=%USERPROFILE%\vimfilef
@@ -22,9 +22,9 @@ if not exist %USERPROFILE%\proxy.bat (
     echo all_proxy=http://127.0.0.1:7890 >> %USERPROFILE%\proxy.bat
 )
 set http_proxy=http://127.0.0.1:7890
-set https_proxy=http://127.0.0.1:7890 
-set socket_proxy=http://127.0.0.1:7890
+set https_proxy=http://127.0.0.1:7890
 set all_proxy=http://127.0.0.1:7890
+set socket_proxy=http://127.0.0.1:7890
 
 :: install plugin
 vim -c "PlugInstall" -c "q" -c "q"
