@@ -92,14 +92,18 @@ set fileencodings=ucs-bom,utf-8,gb18030,latin1
 
 " {{{> gvim/macvim 设置
 if has("gui_running")
-    let system = system('uname -s')
-    if system == "Darwin\n"
-        set guifont=JetBrainsMono\ Nerd\ Font:h18                     " 设置字体: JetBrainsMono Nerd Font
-        " set guifont=JetBrains\ Mono:h18                               " 设置字体: Jetbrain Mono
-        " set guifont=Droid\ Sans\ Mono\ Nerd\ Font\ Complete:h18       " 设置字体
-        " set guifont=MesloLGS\ NF:h18                                  " 设置字体: MesloLGS NF
+    if has('win32') || has('win64') || has('win16')
+        set guifont=JetBrainsMono\ NFM:h13      " 设置字体
     else
-        set guifont=DroidSansMono\ Nerd\ Font\ Regular\ 18      " 设置字体
+        let system = system('uname -s')
+        if system == "Darwin\n"
+            set guifont=JetBrainsMono\ Nerd\ Font:h18                     " 设置字体: JetBrainsMono Nerd Font
+            " set guifont=JetBrains\ Mono:h18                               " 设置字体: Jetbrain Mono
+            " set guifont=Droid\ Sans\ Mono\ Nerd\ Font\ Complete:h18       " 设置字体
+            " set guifont=MesloLGS\ NF:h18                                  " 设置字体: MesloLGS NF
+        else
+            set guifont=DroidSansMono\ Nerd\ Font\ Regular\ 18      " 设置字体
+        endif
     endif
     set guioptions-=m           " 隐藏菜单栏
     set guioptions-=T           " 隐藏工具栏

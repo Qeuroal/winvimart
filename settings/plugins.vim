@@ -18,7 +18,7 @@ command! -nargs=1 -bar UnPlug call s:deregister(<args>)
 " <}}}
 
 " {{{> 插件
-call plug#begin('~/.vim/plugged')
+call plug#begin('~\vimfiles\plugged')
 Plug 'chxuan/cpp-mode'                              " cpp-mode
 Plug 'vim-scripts/DoxygenToolkit.vim'               " Doxygen 注释
 Plug 'junegunn/fzf.vim'
@@ -49,22 +49,22 @@ Plug 'rhysd/clever-f.vim'                           " 强化f和F键
 Plug 'vim-scripts/indentpython.vim'                 " 自动缩进
 Plug 'junegunn/vim-peekaboo'                        " 显示寄存器的内容
 
-" 加载补全插件
-if filereadable(expand($HOME . '/.vimrc.ycm.config'))
-    "启用 ycm 插件
-    Plug 'Valloric/YouCompleteMe'                     " 基于语义的自动补全插件，支持C/C++、C#、Python、PHP等语言
-else
-    Plug 'skywind3000/vim-auto-popmenu'               " 基于上下文的自动提示功能
-    Plug 'skywind3000/vim-dict'                       " 根据文件类型自动添加词典文件到当前缓存区
-endif
-
-" 加载自定义插件
-if filereadable(expand($HOME . '/.vimrc.custom.plugins'))
-    source $HOME/.vimrc.custom.plugins
-endif
-
-" 加载过去/待选的插件
-source $HOME/.vim/settings/former_plugins.vim
+" " 加载补全插件
+" if filereadable(expand($HOME . '\.vimrc.ycm.config'))
+"     "启用 ycm 插件
+"     Plug 'Valloric/YouCompleteMe'                     " 基于语义的自动补全插件，支持C/C++、C#、Python、PHP等语言
+" else
+"     Plug 'skywind3000/vim-auto-popmenu'               " 基于上下文的自动提示功能
+"     Plug 'skywind3000/vim-dict'                       " 根据文件类型自动添加词典文件到当前缓存区
+" endif
+" 
+" " 加载自定义插件
+" if filereadable(expand($HOME . '\.vimrc.custom.plugins'))
+"     source $HOME\.vimrc.custom.plugins
+" endif
+" 
+" " 加载过去/待选的插件
+" source $HOME\.vim\settings\former_plugins.vim
 
 call plug#end()
 " <}}}
