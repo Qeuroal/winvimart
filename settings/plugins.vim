@@ -49,15 +49,15 @@ Plug 'rhysd/clever-f.vim'                           " 强化f和F键
 Plug 'vim-scripts/indentpython.vim'                 " 自动缩进
 Plug 'junegunn/vim-peekaboo'                        " 显示寄存器的内容
 
-" " 加载补全插件
-" if filereadable(expand($HOME . '\.vimrc.ycm.config'))
-"     "启用 ycm 插件
-"     Plug 'Valloric/YouCompleteMe'                     " 基于语义的自动补全插件，支持C/C++、C#、Python、PHP等语言
-" else
-"     Plug 'skywind3000/vim-auto-popmenu'               " 基于上下文的自动提示功能
-"     Plug 'skywind3000/vim-dict'                       " 根据文件类型自动添加词典文件到当前缓存区
-" endif
-" 
+" 加载补全插件
+if filereadable(expand($HOME . '\.vimrc.ycm.config'))
+    "启用 ycm 插件
+    Plug 'Valloric/YouCompleteMe'                     " 基于语义的自动补全插件，支持C/C++、C#、Python、PHP等语言
+else
+    Plug 'skywind3000/vim-auto-popmenu'               " 基于上下文的自动提示功能
+    Plug 'skywind3000/vim-dict'                       " 根据文件类型自动添加词典文件到当前缓存区
+endif
+
 " " 加载自定义插件
 " if filereadable(expand($HOME . '\.vimrc.custom.plugins'))
 "     source $HOME\.vimrc.custom.plugins

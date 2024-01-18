@@ -1,7 +1,7 @@
 @echo off
 
 set curDir=%CD%
-set vimConfigPath=%USERPROFILE%\vimfilef
+set vimConfigPath=%USERPROFILE%\vimfiles
 if exist vimConfigPath (
     exit /b 0
 )
@@ -25,6 +25,15 @@ set http_proxy=http://127.0.0.1:7890
 set https_proxy=http://127.0.0.1:7890
 set all_proxy=http://127.0.0.1:7890
 set socket_proxy=http://127.0.0.1:7890
+
+:: ycm
+set /p ycmOpt=Would you like to install ycm? [y/n] 
+echo %userInput%
+
+if "%ycmOpt%" equ "y" (
+    copy /y "%curDir%\configuration\.ycm_extra_conf.py" "%USERPROFILE%\.ycm_extra_conf.py"
+    copy /y "%curDir%\configuration\vimrc.ycm.config"  "%USERPROFILE%\.vimrc.ycm.config"
+)
 
 :: install plugin
 vim -c "PlugInstall" -c "q" -c "q"
