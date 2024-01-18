@@ -1,0 +1,4 @@
+set enc=utf-8
+set nocompatible
+" Vim with all enhancements
+source $VIMRUNTIME/vimrc_example.vim
