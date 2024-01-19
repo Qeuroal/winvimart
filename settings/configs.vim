@@ -111,7 +111,7 @@ if has("gui_running")
     set guioptions-=r           " 隐藏右侧滚动条
     set guioptions-=b           " 隐藏底部滚动条
     set showtabline=0           " 隐藏Tab栏
-    set guicursor=n-v-c:ver5    " 设置光标为竖线
+    set guicursor=n-v-c:block    " 设置光标为竖线
 endif
 " <}}}
 
