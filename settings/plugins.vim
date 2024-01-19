@@ -29,7 +29,7 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': 
 Plug 'chxuan/vim-buffer'                            " buffer 管理
 Plug 'jiangmiao/auto-pairs'                         " 自动匹配括号
 Plug 'godlygeek/tabular'                            " 对齐插件
-Plug 'chxuan/prepare-code'                          " 新建文件时，生成预定义代码片段
+" Plug 'chxuan/prepare-code'                          " 新建文件时，生成预定义代码片段
 Plug 'mhinz/vim-startify'                           " 开始页面
 Plug 'preservim/tagbar'                             " 使用preservim/tagbar的最新版本，taglist的替代品，显示类/方法/变量
 Plug 'preservim/nerdtree'                           " 代码资源管理器

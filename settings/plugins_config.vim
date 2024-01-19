@@ -112,7 +112,7 @@ let g:airline_right_alt_sep = ''
 "<}}}
 
 "{{{> prepare-code
-let g:prepare_code_plugin_path = expand($HOME . "\vimfiles\plugged\prepare-code")
+" let g:prepare_code_plugin_path = expand($HOME . "\vimfiles\plugged\prepare-code")
 "<}}}
 
 "{{{> nerdtree
