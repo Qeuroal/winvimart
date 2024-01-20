@@ -8,6 +8,10 @@ if exist vimConfigPath (
 
 :: copy configures
 copy /y "%curDir%\configuration\_vimrc" "%USERPROFILE%\_vimrc"
+copy /y "%curDir%\configuration\.vimrc.custom.config" "%USERPROFILE%\.vimrc.custom.config"
+copy /y "%curDir%\configuration\.vimrc.custom.plugins" "%USERPROFILE%\.vimrc.custom.plugins"
+
+:: copy settings
 xcopy "%curDir%\autoload" "%vimConfigPath%\autoload" /E /I /H /K /y
 xcopy "%curDir%\colors" "%vimConfigPath%\colors" /E /I /H /K /y
 xcopy "%curDir%\docs" "%vimConfigPath%\docs" /E /I /H /K /y

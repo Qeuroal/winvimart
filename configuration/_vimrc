@@ -15,7 +15,7 @@ source $HOME\vimfiles\settings\key_mappings.vim
 source $HOME\vimfiles\settings\command_automation.vim
 
 " 加载用户自定义配置
-" if filereadable(expand(~ . '\.vimrc.custom.config'))
-"     source ~\.vimrc.custom.config
-" endif
+if filereadable(expand(~ . '\.vimrc.custom.config'))
+    source ~\.vimrc.custom.config
+endif
 
