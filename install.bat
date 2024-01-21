@@ -39,10 +39,10 @@ if "%ycmOpt%" equ "y" (
     copy /y "%curDir%\configuration\.ycm_extra_conf.py" "%USERPROFILE%\.ycm_extra_conf.py"
     copy /y "%curDir%\configuration\vimrc.ycm.config"  "%USERPROFILE%\.vimrc.ycm.config"
     echo The following softwares need to be installed:
-    echo - python2 or python3(recommended)
-    echo - cmake
-    echo - "Desktop development with C++" under workload in Visual Studio, where ycm supports MSVC 14 (Visual Studio 2015) and 15 (2017)
-    echo - ctags
+    echo ^- python2 or python3^(recommended^)
+    echo ^- cmake
+    echo ^- "Desktop development with C++" under workload in Visual Studio, where ycm supports MSVC 14 ^(Visual Studio 2015^) and 15 ^(2017^)
+    echo ^- ctags
 )
 
 :: install plugin
