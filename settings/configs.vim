@@ -8,6 +8,12 @@ endif
 let s:did_load_configs_vim = 1
 " <}}}
 
+" {{{> 加载外部配置
+" source $VIMRUNTIME/vimrc_example.vim    " 导入 Vim 的示例配置（会打开一些有用的选项，如语法加亮、搜索加亮、命令历史、记住上次的文件位置，等等）
+                                        " 这会加载一些不知道的选项, 不利于整体维护
+                                        " 如果需要请自行添加
+" <}}}
+
 " {{{> 通用设置
 let mapleader = "\\"                    " 定义<leader>键
 set nocompatible                        " 设置不兼容原始vi模式
@@ -23,29 +29,39 @@ set ruler                               " 总是显示光标位置
 set laststatus=2                        " 总是显示状态栏
 set relativenumber number               " 开启行号显示: relative and number
 set cursorline                          " 高亮显示当前行
-set guicursor=a:block                   " 设置光标为方框
+set guicursor=n-v-c-i:block             " 设置光标为方块
+" set guicursor=a:block                   " 设置光标为方块
 set whichwrap+=<,>,h,l                  " 设置光标键跨行
 set ttimeoutlen=0                       " 设置<ESC>键响应时间
 set virtualedit=block,onemore           " 允许光标出现在最后一个字符的后面
 set clipboard=unnamed                   " 设置 vim 与系统共用剪贴板
 set foldmarker={{{>,<}}}                " 设置标志折叠的标志
 set foldmethod=marker                   " 设置折叠为标志折叠
-source $VIMRUNTIME/vimrc_example.vim    " 导入 Vim 的示例配置（这会打开一些有用的选项，如语法加亮、搜索加亮、命令历史、记住上次的文件位置，等等）
 set mouse=""                            " 设置鼠标不可用
 set splitbelow                          " 分割窗口, 默认在下方
 set splitright                          " 分割窗口, 默认在右侧
+if has("patch-7.4.710")
+    set listchars=eol:↵,tab:»·,trail:╳,extends:»,precedes:«,space:_ " 设置不可见字符
+else
+    set listchars=eol:↵,tab:»·,trail:╳,extends:»,precedes:«         " 设置不可见字符
+endif
 " <}}}
 
 " {{{> 代码缩进和排版
 set autoindent                  " 设置自动缩进
 set cindent                     " 设置使用C/C++语言的自动缩进方式
-set cinoptions=g0,:0,N-s,(0     " 设置C/C++语言的具体缩进方式
+set cinoptions=:0,g0,N-s,(0,w1  " 设置C/C++语言的具体缩进方式
+                                "  :0 表示 switch 下面的 case 语句不进行额外缩进
+                                "  g0 代表作用域声明(public:、private: 等)不额外缩进
+                                "  (0 和 w1 配合代表没结束的圆括号里的内容折行时不额外缩进
 set smartindent                 " 智能的选择对其方式
 filetype indent on              " 自适应不同语言的智能缩进
-set expandtab                   " 将制表符扩展为空格
-set tabstop=4                   " 设置编辑时制表符占用空格数
-set shiftwidth=4                " 设置格式化时制表符占用空格数
-set softtabstop=4               " 设置4个空格为制表符
+set expandtab                   " 将制表符<Tab>扩展为空格
+set tabstop=4                   " 设置编辑和实际插入制表符占用的空格数, 即设置"硬"制表符为tabstop个空格
+set shiftwidth=4                " 设置格式化时制表符和自动产生一个缩进占用的空格数
+set softtabstop=4               " 设置4个空格为制表符, 即"软"制表符宽度.
+                                " softtabstop看成"虚拟"的tapstop, 一旦设置了这个选项为非零值，再键入<Tab>和<BS>(退格键)
+                                " 你就感觉像设置了这个宽度的 tabstop 一样, " 实际插入的仍受expandtab和tabstop两个选项控制
 set smarttab                    " 在行和段开始处使用制表符
 " set nowrap                    " 禁止折行
 set backspace=2                 " 使用回车键正常处理indent,eol,start等
@@ -72,6 +88,9 @@ set autoread            " 文件在vim之外修改过，自动重新读入
 set autowrite           " 设置自动保存
 set confirm             " 在处理未保存或只读文件的时候，弹出确认
 " 保留跨会话撤销编辑的能力
+if has('persistent_undo')
+    set undofile        " keep an undo file (undo changes after closing), 自动创建和保存历史记录
+endif
 if has('win32') || has('win64') || has('win16')
     set undodir=~\vimfiles\undodir
 else
@@ -94,7 +113,7 @@ set fileencodings=ucs-bom,utf-8,gb18030,latin1
 " {{{> gvim/macvim 设置
 if has("gui_running")
     if has('win32') || has('win64') || has('win16')
-        set guifont=JetBrainsMono\ NFM:h13      " 设置字体
+        set guifont=JetBrainsMono\ Nerd\ Font:h18                           " 设置字体: JetBrainsMono Nerd Font
     else
         let system = system('uname -s')
         if system == "Darwin\n"
@@ -106,13 +125,14 @@ if has("gui_running")
             set guifont=DroidSansMono\ Nerd\ Font\ Regular\ 18      " 设置字体
         endif
     endif
-    set guioptions-=m           " 隐藏菜单栏
-    set guioptions-=T           " 隐藏工具栏
-    set guioptions-=L           " 隐藏左侧滚动条
-    set guioptions-=r           " 隐藏右侧滚动条
-    set guioptions-=b           " 隐藏底部滚动条
-    set showtabline=0           " 隐藏Tab栏
-    set guicursor=n-v-c:block    " 设置光标为竖线
+
+    set guioptions-=m               " 隐藏菜单栏
+    set guioptions-=T               " 隐藏工具栏
+    set guioptions-=L               " 隐藏左侧滚动条
+    set guioptions-=r               " 隐藏右侧滚动条
+    set guioptions-=b               " 隐藏底部滚动条
+    set showtabline=0               " 隐藏Tab栏
+    " set guicursor=n-v-c-i:block     " 设置光标为方块
 endif
 " <}}}
 
