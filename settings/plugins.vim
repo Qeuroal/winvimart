@@ -19,6 +19,7 @@ command! -nargs=1 -bar UnPlug call s:deregister(<args>)
 
 " {{{> 插件
 call plug#begin('~\vimfiles\plugged')
+Plug 'mbbill/undotree'                              " 可视化undo历史, 浏览和切换undo分支
 Plug 'chxuan/cpp-mode'                              " cpp-mode
 Plug 'vim-scripts/DoxygenToolkit.vim'               " Doxygen 注释
 Plug 'junegunn/fzf.vim'
@@ -48,6 +49,7 @@ Plug 'terryma/vim-smooth-scroll'                    " 让翻页更顺畅
 Plug 'rhysd/clever-f.vim'                           " 强化f和F键
 Plug 'vim-scripts/indentpython.vim'                 " 自动缩进
 Plug 'junegunn/vim-peekaboo'                        " 显示寄存器的内容
+Plug 'frazrepo/vim-rainbow'                         " 为括号涂上颜色
 
 " 加载补全插件
 if filereadable(expand($HOME . '\.vimrc.ycm.config'))
