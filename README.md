@@ -1,5 +1,24 @@
 # installing all completers
 
+## prepare (minimum installation)
+
+- CMake
+
+- Vim
+
+- Python3
+
+   建议不要最新版
+
+- VS2022
+
+   组件:
+
+   - MSVC v143 - VS 2022 C++ x64/x86 生成工...
+   - C++ Build Insights
+   - 用于 Windows 的C++ CMake工具
+   - Windows 11 SDK(10.0.22621.0)
+
 ## Quick start, installing all completers
 
 1. Install YCM plugin via [vim-plug](https://github.com/junegunn/vim-plug) or [Vundle](https://github.com/VundleVim/Vundle.vim#about)
@@ -55,3 +74,8 @@ You can specify the Microsoft Visual C++ (MSVC) version using the `--msvc` optio
 # 参考
 
 - [ycm-core官网](https://github.com/ycm-core/YouCompleteMe?tab=readme-ov-file#lsp-configuration)
+
+> 补充: 设置代理
+> - powershell: `$Env:http_proxy="http://127.0.0.1:7890";$Env:https_proxy="http://127.0.0.1:7890";$Env:all_proxy="http://127.0.0.1:7890"`
+> - cmd: `set http_proxy="http://127.0.0.1:7890" & set https_proxy="http://127.0.0.1:7890" & set all_proxy="http://127.0.0.1:7890"`
+> - 快捷获取: clash获取
