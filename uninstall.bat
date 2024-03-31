@@ -3,7 +3,7 @@
 set curDir=%CD%
 set vimConfigPath=%USERPROFILE%\vimfiles
 
-del /Q %USERPROFILE%\vimfiles
+rd /S /Q %USERPROFILE%\vimfiles
 del /Q %USERPROFILE%\_vimrc
 del /Q %USERPROFILE%\.vimrc.custom.config
 del /Q %USERPROFILE%\.vimrc.custom.plugins
