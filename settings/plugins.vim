@@ -57,7 +57,7 @@ Plug 'junegunn/vim-peekaboo'                        " 显示寄存器的内容
 Plug 'frazrepo/vim-rainbow'                         " 为括号涂上颜色
 
 " 加载补全插件
-if filereadable(expand($HOME . '\.vimrc.ycm.config'))
+" if filereadable(expand($HOME . '\.vimrc.ycm.config'))
 if g:completeScheme == 1
     "启用 ycm 插件
     Plug 'Valloric/YouCompleteMe'                       " 基于语义的自动补全插件，支持C/C++、C#、Python、PHP等语言
