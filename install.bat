@@ -36,6 +36,18 @@ set /p ycmOpt=Would you like to install ycm? [y/n]
 echo %userInput%
 
 if "%ycmOpt%" equ "y" (
+    :: 选择ycm补全方案
+    echo ^"^{^{^{^> complete scheme >> %USERPROFILE%\.vimrc.custom.config
+    echo ^"   0: vim build-in scheme >> %USERPROFILE%\.vimrc.custom.config
+    echo ^"   1: ycm >> %USERPROFILE%\.vimrc.custom.config
+    echo ^"   2: vimautosense >> %USERPROFILE%\.vimrc.custom.config
+    echo ^"   3: vim-auto-popmenu >> %USERPROFILE%\.vimrc.custom.config
+    echo let g:completeScheme=1 >> %USERPROFILE%\.vimrc.custom.config
+    echo ^"^<^}^}^} >> %USERPROFILE%\.vimrc.custom.config
+    echo. >> %USERPROFILE%\.vimrc.custom.config
+    echo. >> %USERPROFILE%\.vimrc.custom.config
+
+    :: copy ycm config
     copy /y "%curDir%\configuration\.ycm_extra_conf.py" "%USERPROFILE%\.ycm_extra_conf.py"
     copy /y "%curDir%\configuration\vimrc.ycm.config"  "%USERPROFILE%\.vimrc.ycm.config"
     echo The following softwares need to be installed:
@@ -43,6 +55,18 @@ if "%ycmOpt%" equ "y" (
     echo ^- cmake
     echo ^- "Desktop development with C++" under workload in Visual Studio, where ycm supports MSVC 14 ^(Visual Studio 2015^) and 15 ^(2017^)
     echo ^- ctags
+) else (
+    :: 选择非ycm补全方案
+    echo ^"^{^{^{^> complete scheme >> %USERPROFILE%\.vimrc.custom.config
+    echo ^"   0: vim build-in scheme >> %USERPROFILE%\.vimrc.custom.config
+    echo ^"   1: ycm >> %USERPROFILE%\.vimrc.custom.config
+    echo ^"   2: vimautosense >> %USERPROFILE%\.vimrc.custom.config
+    echo ^"   3: vim-auto-popmenu >> %USERPROFILE%\.vimrc.custom.config
+    echo let g:completeScheme=2 >> %USERPROFILE%\.vimrc.custom.config
+    echo ^"^<^}^}^} >> %USERPROFILE%\.vimrc.custom.config
+    echo. >> %USERPROFILE%\.vimrc.custom.config
+    echo. >> %USERPROFILE%\.vimrc.custom.config
+
 )
 
 :: install plugin
