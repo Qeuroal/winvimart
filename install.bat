@@ -21,10 +21,10 @@ xcopy "%curDir%\settings" "%vimConfigPath%\settings" /E /I /H /K /y
 
 :: set proxy
 if not exist %USERPROFILE%\proxy.bat (
-    echo http_proxy=http://127.0.0.1:7890 >> %USERPROFILE%\proxy.bat
-    echo https_proxy=http://127.0.0.1:7890 >> %USERPROFILE%\proxy.bat
-    echo socket_proxy=http://127.0.0.1:7890 >> %USERPROFILE%\proxy.bat
-    echo all_proxy=http://127.0.0.1:7890 >> %USERPROFILE%\proxy.bat
+    echo 'set http_proxy=http://127.0.0.1:7890' >> %USERPROFILE%\proxy.bat
+    echo 'set https_proxy=http://127.0.0.1:7890' >> %USERPROFILE%\proxy.bat
+    echo 'set socket_proxy=http://127.0.0.1:7890' >> %USERPROFILE%\proxy.bat
+    echo 'set all_proxy=http://127.0.0.1:7890' >> %USERPROFILE%\proxy.bat
 )
 set http_proxy=http://127.0.0.1:7890
 set https_proxy=http://127.0.0.1:7890
