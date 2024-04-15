@@ -24,8 +24,9 @@ let g:completeScheme=get(g:, "completeScheme", 0)
 
 " {{{> 插件
 call plug#begin('~\vimfiles\plugged')
+" Plug 'preservim/vimux'                              " 不离开vim在随意shell中随便运行命令
+" Plug 'christoomey/vim-tmux-navigator'               " vim与tmux无缝导航
 Plug 'mbbill/undotree'                              " 可视化undo历史, 浏览和切换undo分支
-Plug 'chxuan/cpp-mode'                              " cpp-mode
 Plug 'vim-scripts/DoxygenToolkit.vim'               " Doxygen 注释
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }     " Fzf 搜索
@@ -35,6 +36,7 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': 
 Plug 'chxuan/vim-buffer'                            " buffer 管理
 Plug 'jiangmiao/auto-pairs'                         " 自动匹配括号
 Plug 'godlygeek/tabular'                            " 对齐插件
+Plug 'preservim/vim-markdown', { 'for': ['markdown'] }      " 语法高亮, 匹配规则以及对原始Markdown的映射和拓展
 " Plug 'chxuan/prepare-code'                          " 新建文件时，生成预定义代码片段
 Plug 'mhinz/vim-startify'                           " 开始页面
 Plug 'preservim/tagbar'                             " 使用preservim/tagbar的最新版本，taglist的替代品，显示类/方法/变量
