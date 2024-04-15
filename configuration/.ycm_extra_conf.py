@@ -228,7 +228,7 @@ def PythonSysPath( **kwargs ):
 
   sys_path.append( p.join( DIR_OF_THIRD_PARTY, 'jedi_deps', 'numpydoc' ) )
 
-  # !!! support python third party packages
+  # !!! support python third party packages !!!
   # sys_path.insert(1, '<absolute_path_to_third_party_package>') # recommend \
     # or sys_path.insert(0, '<path_to_third_party_package>') \
     # eg: sys_path.insert(1, 'E:\\anocanda3\\Lib\\site-packages')
