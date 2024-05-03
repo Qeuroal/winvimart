@@ -111,7 +111,7 @@ set fileencodings=ucs-bom,utf-8,gb18030,latin1
 " {{{> gvim/macvim 设置
 if has("gui_running")
     if has('win32') || has('win64') || has('win16')
-        set guifont=JetBrainsMonoNL\ NML:h14                                " 设置字体: JetBrainsMonoNL Nerd Font
+        set guifont=JetBrainsMonoNL\ NFM:h14                                " 设置字体: JetBrainsMonoNL Nerd Font
     else
         let system = system('uname -s')
         if system == "Darwin\n"
@@ -124,14 +124,14 @@ if has("gui_running")
         endif
     endif
 
-    set guioptions-=m               " 隐藏菜单栏
-    set guioptions-=T               " 隐藏工具栏
-    set guioptions-=L               " 隐藏左侧滚动条
-    set guioptions-=r               " 隐藏右侧滚动条
-    set guioptions-=b               " 隐藏底部滚动条
-    set showtabline=0               " 隐藏Tab栏
-    " set guicursor=n-v-c-i:block     " 设置光标为方块
-    set guicursor=a:block           " 设置光标为方块
+    set guioptions-=m                   " 隐藏菜单栏
+    set guioptions-=T                   " 隐藏工具栏
+    set guioptions-=L                   " 隐藏左侧滚动条
+    set guioptions-=r                   " 隐藏右侧滚动条
+    set guioptions-=b                   " 隐藏底部滚动条
+    set showtabline=0                   " 隐藏Tab栏
+    " set guicursor=n-v-c-i:block       " 设置光标为方块
+    set guicursor=a:block,a:blinkon0    " 设置光标为方块
 endif
 " <}}}
 
