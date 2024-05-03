@@ -60,12 +60,6 @@ nnoremap <leader>kpc :PlugClean<cr>
 " 相对行号的开启/关闭
 nnoremap <silent> <leader>kn :call ToggleNumber()<cr>
 
-" 分屏窗口移动
-" nnoremap <c-j> <c-w>j
-" nnoremap <c-k> <c-w>k
-" nnoremap <c-h> <c-w>h
-" nnoremap <c-l> <c-w>l
-
 " 复制当前选中到系统剪切板
 vmap <leader><leader>y "+y
 
@@ -86,6 +80,20 @@ nnoremap <leader>kc :call popup_clear(1)<cr>
 nnoremap <silent> <leader>kms :mksession! .Session.vim<cr>
 " 加载会话
 nnoremap <silent> <leader>kls :source .Session.vim<cr>
+"<}}}
+
+"{{{> 窗口相关
+" 分屏窗口移动
+nnoremap <C-j> <C-W>j
+nnoremap <C-k> <C-W>k
+nnoremap <C-h> <C-W>h
+nnoremap <C-l> <C-W>l
+
+" 设置c-tab和c-s-tab
+" nnoremap <C-Tab>   <C-W>w
+" inoremap <C-Tab>   <C-O><C-W>w
+" nnoremap <C-S-Tab> <C-W>W
+" inoremap <C-S-Tab> <C-O><C-W>W
 "<}}}
 
 
