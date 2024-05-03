@@ -27,6 +27,13 @@ if not exist %USERPROFILE%\proxy.bat (
     REM echo 'set all_proxy=http://127.0.0.1:7890' >> %USERPROFILE%\proxy.bat
     copy /y "%curDir%\configuration\proxy.bat" "%USERPROFILE%\proxy.bat"
 )
+if not exist %USERPROFILE%\proxy.ps1 (
+    copy /y "%curDir%\configuration\proxy.ps1" "%USERPROFILE%\proxy.ps1"
+)
+if not exist %USERPROFILE%\proxy.sh (
+    copy /y "%curDir%\configuration\proxy.sh" "%USERPROFILE%\proxy.sh"
+)
+
 set http_proxy=http://127.0.0.1:7890
 set https_proxy=http://127.0.0.1:7890
 set all_proxy=http://127.0.0.1:7890
@@ -70,12 +77,12 @@ if "%ycmOpt%" equ "y" (
 
 )
 
+echo please add ^`alias vim=^'^<vim_absolute_path^>^'^` to %USERPROFILE%\.bashrc to support gvim in git. Note: In .bashrc file, a / is inserted before a space, and the path separator is /
+echo     e.g.: echo alias vim=^'E:/Program\ Files/Vim/vim91/vim.exe^' ^>^> %USERPROFILE%\.bashrc
+
 :: install plugin
 vim -c "PlugInstall" -c "q" -c "q"
 
 cd %curDir%
-
-echo please add ^`alias vim=^'<vim_absolute_path>^'^` to ~/.bashrc to support gvim in git. Note: A / is inserted before a space, and the path separator is /
-echo     e.g.: echo alias vim=^'E:/Program\ Files/Vim/vim91/vim.exe^' >> .bashrc
 
 
