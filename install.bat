@@ -27,6 +27,13 @@ if not exist %USERPROFILE%\proxy.bat (
     REM echo 'set all_proxy=http://127.0.0.1:7890' >> %USERPROFILE%\proxy.bat
     copy /y "%curDir%\configuration\proxy.bat" "%USERPROFILE%\proxy.bat"
 )
+if not exist %USERPROFILE%\proxy.ps1 (
+    copy /y "%curDir%\configuration\proxy.ps1" "%USERPROFILE%\proxy.ps1"
+)
+if not exist %USERPROFILE%\proxy.sh (
+    copy /y "%curDir%\configuration\proxy.sh" "%USERPROFILE%\proxy.sh"
+)
+
 set http_proxy=http://127.0.0.1:7890
 set https_proxy=http://127.0.0.1:7890
 set all_proxy=http://127.0.0.1:7890
