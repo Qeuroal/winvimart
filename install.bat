@@ -74,3 +74,8 @@ if "%ycmOpt%" equ "y" (
 vim -c "PlugInstall" -c "q" -c "q"
 
 cd %curDir%
+
+echo please add ^`alias vim=^'<vim_absolute_path>^'^` to ~/.bashrc to support gvim in git. Note: A / is inserted before a space, and the path separator is /
+echo     e.g.: echo alias vim=^'E:/Program\ Files/Vim/vim91/vim.exe^' >> .bashrc
+
+
