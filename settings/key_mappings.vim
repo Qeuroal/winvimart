@@ -10,7 +10,7 @@ let s:did_load_mappings_vim = 1
 
 "{{{> import vim scripts
 " 导入 functions.vim
-source $HOME\vimfiles\settings\functions.vim
+source $HOME/vimfiles/settings/functions.vim
 "<}}}
 
 "{{{> 端点
@@ -41,13 +41,13 @@ inoremap <c-w> <c-g>u<c-w>
 "{{{> 正常模式绑定按键
 " 编辑vimrc相关配置文件
 " nnoremap <leader>e :edit $MYVIMRC<cr>
-nnoremap <leader>evc :edit ~\.vimrc.custom.config<cr>
-nnoremap <leader>evp :edit ~\.vimrc.custom.plugins<cr>
+nnoremap <leader>evc :edit ~/.vimrc.custom.config<cr>
+nnoremap <leader>evp :edit ~/.vimrc.custom.plugins<cr>
 " 重新加载vimrc文件
 " nnoremap <leader>s :source $MYVIMRC<cr>
 
 " 查看 vimart 的help文件
-nnoremap <leader>h :view +let\ &l:modifiable=0 ~\vimfiles\docs\help.md<cr>
+nnoremap <leader>h :view +let\ &l:modifiable=0 ~/vimfiles/docs/help.md<cr>
 
 " 打开当前光标所在单词的vim帮助文档
 nnoremap <leader>H :execute ":help " . expand("<cword>")<cr>
@@ -76,7 +76,9 @@ nnoremap <leader><leader>p "+p
 nnoremap <leader>ks :%s/^\s*$//g<cr>
 
 " 手动触发 CursorHold 事件
-nnoremap  <leader>kc :doautocmd CursorHold<cr>
+nnoremap <leader>kh :doautocmd CursorHold<cr>
+" 关闭popup
+nnoremap <leader>kc :call popup_clear(1)<cr>
 "<}}}
 
 "{{{> 会话相关
