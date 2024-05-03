@@ -24,6 +24,13 @@ autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | execute "
 autocmd FileType markdown set shiftwidth=3 | set expandtab | set tabstop=3 | set softtabstop=3
 "<}}}
 
+"{{{> 窗口相关
+" 设置默认最大化
+if has('win32') || has('win64') || has('win16')
+    autocmd GUIEnter * simalt ~x
+endif
+"<}}}
+
 
 
 
