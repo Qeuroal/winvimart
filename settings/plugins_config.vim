@@ -112,7 +112,7 @@ let g:airline_right_alt_sep = ''
 "<}}}
 
 "{{{> prepare-code
-" let g:prepare_code_plugin_path = expand($HOME . "\vimfiles\plugged\prepare-code")
+" let g:prepare_code_plugin_path = expand($HOME . "/vimfiles/plugged/prepare-code")
 "<}}}
 
 "{{{> nerdtree
@@ -132,7 +132,7 @@ let g:NERDTreeShowHidden=1
 " 为 python, shell 等添加注释
 autocmd FileType python,shell,coffee set commentstring=#\ %s
 " 修改 java, c, cpp 注释风格
-autocmd FileType java,c,cpp set commentstring=\/\ %s
+autocmd FileType java,c,cpp set commentstring=//\ %s
 "<}}}
 
 "{{{> tagbar
@@ -169,8 +169,8 @@ noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
 "{{{> 加载补全配置
 " 补全方案
 let g:completeScheme=get(g:, "completeScheme", 0)
-" if filereadable(expand($HOME . '\.vimrc.ycm.config'))
-if g:completeScheme == 1 && filereadable(expand($HOME . '\.vimrc.ycm.config'))
+" if filereadable(expand($HOME . '/.vimrc.ycm.config'))
+if g:completeScheme == 1 && filereadable(expand($HOME . '/.vimrc.ycm.config'))
     source $HOME/.vimrc.ycm.config
 elseif g:completeScheme == 3
     " vim-auto-popmenu 配置
@@ -188,7 +188,7 @@ elseif g:completeScheme == 3
     " vim-dict 配置
     " 添加额外的字典文件夹
     let g:vim_dict_dict = [
-        \ '~\vimfiles\dict',
+        \ '~/vimfiles/dict',
         \ ]
     " 覆盖文件类型：即一个文件类型使用其他文件类型的字典文件。下面的 html 使用 html,javascript,css 三个文件类型的字典
     let g:vim_dict_config = {'html':'html,javascript,css', 'markdown':'text'}

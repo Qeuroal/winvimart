@@ -23,7 +23,7 @@ let g:completeScheme=get(g:, "completeScheme", 0)
 "<}}}
 
 " {{{> 插件
-call plug#begin('~\vimfiles\plugged')
+call plug#begin('~/vimfiles/plugged')
 " Plug 'preservim/vimux'                              " 不离开vim在随意shell中随便运行命令
 " Plug 'christoomey/vim-tmux-navigator'               " vim与tmux无缝导航
 Plug 'mbbill/undotree'                              " 可视化undo历史, 浏览和切换undo分支
@@ -59,7 +59,7 @@ Plug 'junegunn/vim-peekaboo'                        " 显示寄存器的内容
 Plug 'frazrepo/vim-rainbow'                         " 为括号涂上颜色
 
 " 加载补全插件
-" if filereadable(expand($HOME . '\.vimrc.ycm.config'))
+" if filereadable(expand($HOME . '/.vimrc.ycm.config'))
 if g:completeScheme == 1
     "启用 ycm 插件
     Plug 'Valloric/YouCompleteMe'                       " 基于语义的自动补全插件，支持C/C++、C#、Python、PHP等语言
@@ -74,12 +74,12 @@ elseif g:completeScheme == 3
 endif
 
 " " 加载自定义插件
-" if filereadable(expand($HOME . '\.vimrc.custom.plugins'))
-"     source $HOME\.vimrc.custom.plugins
+" if filereadable(expand($HOME . '/.vimrc.custom.plugins'))
+"     source $HOME/.vimrc.custom.plugins
 " endif
 " 
 " " 加载过去/待选的插件
-" source $HOME\.vim\settings\former_plugins.vim
+" source $HOME/.vim/settings/former_plugins.vim
 
 call plug#end()
 " <}}}
