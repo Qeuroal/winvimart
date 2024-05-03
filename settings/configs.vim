@@ -130,8 +130,8 @@ if has("gui_running")
     set guioptions-=r                   " 隐藏右侧滚动条
     set guioptions-=b                   " 隐藏底部滚动条
     set showtabline=0                   " 隐藏Tab栏
-    " set guicursor=n-v-c-i:block       " 设置光标为方块
-    set guicursor=a:block,a:blinkon0    " 设置光标为方块
+    " set guicursor=n-v-c-i:block         " 设置光标为方块
+    set guicursor=a:block,a:blinkon0    " 设置光标为方块, 且光标不闪烁
 endif
 " <}}}
 
