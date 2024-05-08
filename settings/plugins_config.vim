@@ -81,8 +81,6 @@ let g:mkdp_preview_options = {
 "<}}}
 
 "{{{> tabular
-nnoremap <leader><leader>l :Tab /\|<cr>
-nnoremap <leader><leader>= :Tab /=<cr>
 "<}}}
 
 "{{{> auto-pairs
@@ -94,8 +92,6 @@ au FileType tex let b:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'",'"':'"', '`
 "{{{> vim-buffer
 nnoremap <silent> <c-p> :PreviousBuffer<cr>
 nnoremap <silent> <c-n> :NextBuffer<cr>
-nnoremap <silent> <leader>d :CloseBuffer<cr>
-nnoremap <silent> <leader>D :BufOnly<cr>
 "<}}}
 
 "{{{> airline
@@ -111,12 +107,9 @@ let g:airline_right_sep = ''
 let g:airline_right_alt_sep = ''
 "<}}}
 
-"{{{> prepare-code
-" let g:prepare_code_plugin_path = expand($HOME . "/vimfiles/plugged/prepare-code")
-"<}}}
-
 "{{{> nerdtree
-nnoremap <silent> <leader>n :NERDTreeToggle<cr>
+nnoremap <silent> <leader>nt :NERDTreeToggle<cr>
+nnoremap <silent> <leader>nf :NERDTreeFind<cr>
 let g:NERDTreeFileExtensionHighlightFullName = 1
 let g:NERDTreeExactMatchHighlightFullName = 1
 let g:NERDTreePatternMatchHighlightFullName = 1
@@ -137,7 +130,7 @@ autocmd FileType java,c,cpp set commentstring=//\ %s
 
 "{{{> tagbar
 let g:tagbar_width = 30
-nnoremap <silent> <leader>t :TagbarToggle<cr>
+nnoremap <silent> <leader>tt :TagbarToggle<cr>
 "<}}}
 
 "{{{> nerdtree-git-plugin
@@ -251,16 +244,8 @@ let g:vim_markdown_new_list_item_indent = 3
 let g:vim_markdown_conceal_code_blocks = 0
 "<}}}
 
-" "{{{> preservim/vimux
-" " Prompt for a command to run
-" nnoremap <Leader>vp :VimuxPromptCommand<CR>
-" " Run last command executed by VimuxRunCommand
-" nnoremap <Leader>vl :VimuxRunLastCommand<CR>
-" " Inspect runner pane
-" nnoremap <Leader>vi :VimuxInspectRunner<CR>
-" " Zoom the tmux runner pane
-" nnoremap <leader>vz :VimuxZoomRunner<CR>
-" "<}}}
+"{{{> preservim/vimux
+"<}}}
 
 
 
