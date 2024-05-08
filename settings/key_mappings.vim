@@ -41,8 +41,8 @@ inoremap <c-w> <c-g>u<c-w>
 "{{{> 正常模式绑定按键
 " 编辑vimrc相关配置文件
 " nnoremap <leader>e :edit $MYVIMRC<cr>
-nnoremap <leader>evc :edit ~/.vimrc.custom.config<cr>
-nnoremap <leader>evp :edit ~/.vimrc.custom.plugins<cr>
+" nnoremap <leader>evc :edit ~/.vimrc.custom.config<cr>
+" nnoremap <leader>evp :edit ~/.vimrc.custom.plugins<cr>
 " 重新加载vimrc文件
 " nnoremap <leader>s :source $MYVIMRC<cr>
 
@@ -53,9 +53,9 @@ nnoremap <leader>h :view +let\ &l:modifiable=0 ~/vimfiles/docs/help.md<cr>
 nnoremap <leader>H :execute ":help " . expand("<cword>")<cr>
 
 " 安装、更新、删除插件
-nnoremap <leader>kpi :PlugInstall<cr>
-nnoremap <leader>kpu :PlugUpdate<cr>
-nnoremap <leader>kpc :PlugClean<cr>
+" nnoremap <leader>kpi :PlugInstall<cr>
+" nnoremap <leader>kpu :PlugUpdate<cr>
+" nnoremap <leader>kpc :PlugClean<cr>
 
 " 相对行号的开启/关闭
 nnoremap <silent> <leader>kn :call ToggleNumber()<cr>
@@ -70,16 +70,16 @@ nnoremap <leader><leader>p "+p
 nnoremap <leader>ks :%s/^\s*$//g<cr>
 
 " 手动触发 CursorHold 事件
-nnoremap <leader>kh :doautocmd CursorHold<cr>
+nnoremap <leader>c :doautocmd CursorHold<cr>
 " 关闭popup
-nnoremap <leader>kc :call popup_clear(1)<cr>
+nnoremap <leader>p :call popup_clear(1)<cr>
 "<}}}
 
 "{{{> 会话相关
 " 创建会话
-nnoremap <silent> <leader>kms :mksession! .Session.vim<cr>
+nnoremap <silent> <leader>kss :mksession! .Session.vim<cr>
 " 加载会话
-nnoremap <silent> <leader>kls :source .Session.vim<cr>
+nnoremap <silent> <leader>ksl :source .Session.vim<cr>
 "<}}}
 
 "{{{> 窗口相关
