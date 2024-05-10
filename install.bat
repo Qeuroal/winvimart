@@ -39,6 +39,10 @@ set https_proxy=http://127.0.0.1:7890
 set all_proxy=http://127.0.0.1:7890
 set socket_proxy=http://127.0.0.1:7890
 
+:: dependency software
+REM 安装ripgrep
+winget install BurntSushi.ripgrep.MSVC
+
 :: ycm
 set /p ycmOpt=Would you like to install ycm? [y/n] 
 echo %userInput%
