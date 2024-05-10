@@ -140,7 +140,7 @@ autocmd FileType java,c,cpp set commentstring=//\ %s
 
 "{{{> tagbar
 let g:tagbar_width = 30
-nnoremap <silent> <leader>tt :TagbarToggle<cr>
+nnoremap <silent> <leader>t :TagbarToggle<cr>
 "<}}}
 
 "{{{> nerdtree-git-plugin
