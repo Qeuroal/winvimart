@@ -623,11 +623,6 @@ endif
 " nmap Q <nop>
 "<}}}
 
-"{{{> import vim scripts
-" 导入 functions.vim
-source $HOME/vimfiles/settings/functions.vim
-"<}}}
-
 "{{{> 端点
 inoremap <c-u> <c-g>u<c-u>
 inoremap <c-w> <c-g>u<c-w>
