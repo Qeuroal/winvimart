@@ -238,6 +238,7 @@ endif
 
 "{{{> vimrc_example 的设定修改
 set scrolloff=0         " vimrc_example 设置值为5, 导致只要屏幕能滚动, 光标就移不到最上面的 4 行和最下面的 4 行里, 因为一移进去屏幕就会自动滚动
+"<}}}
 
 " {{{> gvim/macvim 设置
 if has("gui_running")
@@ -283,7 +284,6 @@ elseif &term =~ 'xterm' || &term =~ 'screen' || &term == 'win32'
 else
     echo &term
 endif
-" <}}}
 "<}}}
 
 "====================== 加载通用配置 ====================== <}}}
@@ -332,8 +332,8 @@ endfunction
 "{{{> ====================== 加载插件配置 ======================
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "{{{> LeaderF
-nnoremap <leader>o :LeaderfFile .<CR>
-nnoremap <leader>f :LeaderfFunction<CR>
+nnoremap <silent> <leader>o :LeaderfFile .<CR>
+nnoremap <silent> <leader>f :LeaderfFunction<CR>
 let g:Lf_WildIgnore = {
             \ 'dir': ['.svn','.git','.hg','.vscode','.wine','.deepinwine','.oh-my-zsh'],
             \ 'file': ['*.sw?','~$*','*.bak','*.exe','*.o','*.so','*.py[co]']
@@ -572,7 +572,7 @@ autocmd BufWinEnter *.* RainbowLoad
 "<}}}
 
 "{{{> undotree
-nnoremap <leader><F5> :UndotreeToggle<CR>
+nnoremap <silent> <leader><F5> :UndotreeToggle<CR>
 "<}}}
 
 "{{{> vim-markdown
@@ -652,22 +652,22 @@ nnoremap <leader>ks :%s/^\s*$//g<cr>
 
 "{{{> autocmd key mapping
 " 手动触发 CursorHold 事件
-nnoremap <leader>c :doautocmd CursorHold<cr>
+nnoremap <silent> <leader>c :doautocmd CursorHold<cr>
 "<}}}
 
 "{{{> popup
 " 滚动popup
-nnoremap <F9> :call ScrollPopup(1)<CR>
-nnoremap <F10> :call ScrollPopup(-1)<CR>
+nnoremap <silent> <F9> :call ScrollPopup(1)<CR>
+nnoremap <silent> <F10> :call ScrollPopup(-1)<CR>
 " 关闭popup
-nnoremap <leader>pc :call popup_clear(1)<cr>
+nnoremap <silent> <leader>pc :call popup_clear(1)<cr>
 "<}}}
 
 "{{{> 会话相关
 " 创建会话
-nnoremap <silent> <leader>kss :mksession! .Session.vim<cr>
+nnoremap <leader>kss :mksession! .Session.vim<cr>
 " 加载会话
-nnoremap <silent> <leader>ksl :source .Session.vim<cr>
+nnoremap <leader>ksl :source .Session.vim<cr>
 "<}}}
 
 "{{{> 窗口相关
