@@ -1,7 +1,7 @@
 set nocompatible    " VI compatible mode is disabled so that VIm things work
 
 "{{{> ====================== 加载插件 ======================
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " {{{> 卸载默认插件 Unplug
 function! s:deregister(repo)
   let repo = substitute(a:repo, '[\/]\+$', '', '')
@@ -89,7 +89,7 @@ runtime macros/matchit.vim
 
 
 "{{{> ====================== 加载通用配置 ======================
-"j""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " {{{> 加载外部配置
 " source $VIMRUNTIME/vimrc_example.vim      " 导入 Vim 的示例配置（会打开一些有用的选项，如语法加亮、搜索加亮、命令历史、记住上次的文件位置，等等）
                                             " 这会加载一些不知道的选项, 不利于整体维护
@@ -287,8 +287,8 @@ set scrolloff=0         " vimrc_example 设置值为5, 导致只要屏幕能滚�
 
 
 "{{{> ====================== 加载自定义函数 ======================
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" 相对行号的开启/关闭
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"{{{> 相对行号的开启/关闭
 function! ToggleNumber()
     if (&relativenumber == 1)
         set norelativenumber
@@ -296,8 +296,9 @@ function! ToggleNumber()
         set relativenumber
     endif
 endfunction
+"<}}}
 
-" popup滚动
+"{{{> popup滚动
 function! ScrollPopup(nlines=0)
     let winids = popup_list()
     if len(winids) == 0
@@ -320,10 +321,7 @@ function! ScrollPopup(nlines=0)
 
     call popup_setoptions(winids[0], {'firstline': firstline})
 endfunction
-
-
-
-
+"<}}}
 
 "<}}}
 
@@ -579,10 +577,6 @@ let g:vim_markdown_conceal_code_blocks = 0
 "{{{> preservim/vimux
 "<}}}
 
-
-
-
-
 "<}}}
 
 
@@ -591,15 +585,11 @@ let g:vim_markdown_conceal_code_blocks = 0
 " save read-only files
 command -nargs=0 Sudow w !sudo tee % >/dev/null
 
-
-
-
-
 "<}}}
 
 
 "{{{> ====================== 加载自动指令配置 ======================
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "{{{> 打开文件自动定位到最后编辑的位置
 autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | execute "normal! g'\"" | endif
 "<}}}
@@ -623,10 +613,6 @@ if has('win32') || has('win64') || has('win16')
     autocmd GUIEnter * simalt ~x
 endif
 "<}}}
-
-
-
-
 
 "<}}}
 
@@ -688,10 +674,6 @@ nnoremap <C-k> <C-W>k
 nnoremap <C-h> <C-W>h
 nnoremap <C-l> <C-W>l
 "<}}}
-
-
-
-
 
 "<}}}
 
