@@ -74,13 +74,13 @@ elseif g:completeScheme == 3
     Plug 'skywind3000/vim-dict'                         " 根据文件类型自动添加词典文件到当前缓存区
 endif
 
-" " 加载自定义插件
-" if filereadable(expand('~/.vimrc.custom.plugins'))
-"     source $HOME/.vimrc.custom.plugins
-" endif
-" 
-" " 加载过去/待选的插件
-" source $HOME/.vim/settings/former_plugins.vim
+" 加载自定义插件
+if filereadable(expand('~/.vimrc.custom.plugins'))
+    source ~/.vimrc.custom.plugins
+endif
+
+" 加载过去/待选的插件
+source ~/vimfiles/settings/former_plugins.vim
 
 call plug#end()
 " <}}}
@@ -502,7 +502,7 @@ noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
 let g:completeScheme=get(g:, "completeScheme", 0)
 " if filereadable(expand('~/.vimrc.ycm.config'))
 if g:completeScheme == 1 && filereadable(expand('~/.vimrc.ycm.config'))
-    source $HOME/.vimrc.ycm.config
+    source ~/.vimrc.ycm.config
 elseif g:completeScheme == 3
     " vim-auto-popmenu 配置
     " enable this plugin for filetypes, '*' for all files.
