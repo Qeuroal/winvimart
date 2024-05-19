@@ -60,8 +60,12 @@ if "%ycmOpt%" equ "y" (
     echo. >> %USERPROFILE%\.vimrc.custom.config
 
     :: copy ycm config
-    copy /y "%curDir%\configuration\.ycm_extra_conf.py" "%USERPROFILE%\.ycm_extra_conf.py"
-    copy /y "%curDir%\configuration\vimrc.ycm.config"  "%USERPROFILE%\.vimrc.ycm.config"
+    if not exist "%USERPROFILE%\.ycm_extra_conf.py" (
+        copy /y "%curDir%\configuration\.ycm_extra_conf.py" "%USERPROFILE%\.ycm_extra_conf.py"
+    )
+    if not exist "%USERPROFILE%\.vimrc.ycm.config" (
+        copy /y "%curDir%\configuration\vimrc.ycm.config"  "%USERPROFILE%\.vimrc.ycm.config"
+    )
     echo The following softwares need to be installed:
     echo ^- python2 or python3^(recommended^)
     echo ^- cmake
