@@ -42,6 +42,9 @@ set socket_proxy=http://127.0.0.1:7890
 :: dependency software
 REM 安装ripgrep
 winget install BurntSushi.ripgrep.MSVC
+REM install wezterm
+winget install wezterm
+copy /y "%curDir%\assets\wezterm\.wezterm.lua" "%USERPROFILE%\.wezterm.lua"
 
 :: ycm
 set /p ycmOpt=Would you like to install ycm? [y/n] 
