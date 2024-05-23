@@ -42,6 +42,10 @@ config.keys = {
   { key = 'T', mods = 'SHIFT|CTRL', action = act.ShowLauncher },                -- Ctrl+Shift+T 新 tab
   { key = 'W', mods = 'SHIFT|CTRL', action = act.CloseCurrentTab{ confirm = false } },                                  -- Ctrl+Shift+W 关闭 tab 且不进行确认
   { key = 'Enter', mods = 'SHIFT|CTRL', action = act.ShowLauncherArgs { flags = 'FUZZY|TABS|LAUNCH_MENU_ITEMS' } },     -- Ctrl+Shift+Enter 显示启动菜单
+  { key = '"', mods = 'SHIFT|CTRL', action = act.SplitVertical {domain="CurrentPaneDomain"} },                          -- 沿垂直方向分屏
+  { key = '|', mods = 'SHIFT|CTRL', action = act.SplitHorizontal {domain="CurrentPaneDomain"} },                        -- 沿水平方向分屏
+  { key = 'LeftArrow', mods = 'SHIFT|CTRL', action = act.ActivatePaneDirection "Left" },                                -- 沿垂直方向分屏
+  { key = 'RightArrow', mods = 'SHIFT|CTRL', action = act.ActivatePaneDirection "Right" },                              -- 沿垂直方向分屏
   -- { key = 'PageUp', mods = 'SHIFT|CTRL', action = act.ScrollByPage(-1) },       -- Ctrl+Shift+PageUp 向上滚动一页
   -- { key = 'PageDown', mods = 'SHIFT|CTRL', action = act.ScrollByPage(1) },      -- Ctrl+Shift+PageDown 向下滚动一页
   -- { key = 'UpArrow', mods = 'SHIFT|CTRL', action = act.ScrollByLine(-1) },      -- Ctrl+Shift+UpArrow 向上滚动一行
