@@ -42,6 +42,9 @@ set socket_proxy=http://127.0.0.1:7890
 :: dependency software
 REM 安装ripgrep
 winget install BurntSushi.ripgrep.MSVC
+REM install wezterm
+winget install wezterm
+copy /y "%curDir%\assets\wezterm\.wezterm.lua" "%USERPROFILE%\.wezterm.lua"
 
 :: ycm
 set /p ycmOpt=Would you like to install ycm? [y/n] 
@@ -87,6 +90,7 @@ if "%ycmOpt%" equ "y" (
 
 echo please add ^`alias vim=^'^<vim_absolute_path^>^'^` to %USERPROFILE%\.bashrc to support gvim in git. Note: In .bashrc file, a / is inserted before a space, and the path separator is /
 echo     e.g.: echo alias vim=^'E:/Program\ Files/Vim/vim91/vim.exe^' ^>^> %USERPROFILE%\.bashrc
+echo option: winget install clink
 
 :: install plugin
 vim -c "PlugInstall" -c "q" -c "q"
