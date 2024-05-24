@@ -32,8 +32,8 @@ config.launch_menu = {
 config.disable_default_key_bindings = true
 local act = wezterm.action
 config.keys = {
-  { key = 'Tab', mods = 'CTRL', action = act.ActivateTabRelative(1) },          -- Ctrl+Shift+Tab 遍历 tab
-  { key = 'Tab', mods = 'SHIFT|CTRL', action = act.ActivateTabRelative(-1) },   -- Ctrl+Shift+Tab 遍历 tab
+  { key = 'Tab', mods = 'CTRL', action = act.ActivateTabRelative(1) },          -- Ctrl+Tab 向前遍历 tab
+  { key = 'Tab', mods = 'SHIFT|CTRL', action = act.ActivateTabRelative(-1) },   -- Ctrl+Shift+Tab 向后遍历 tab
   { key = 'F11', mods = 'NONE', action = act.ToggleFullScreen },                -- F11 切换全屏
   -- { key = '+', mods = 'SHIFT|CTRL', action = act.IncreaseFontSize },         -- Ctrl+Shift++ 字体增大
   { key = '_', mods = 'SHIFT|CTRL', action = act.DecreaseFontSize },            -- Ctrl+Shift+- 字体减小
