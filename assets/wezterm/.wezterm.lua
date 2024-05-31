@@ -17,6 +17,11 @@ config.window_padding = { left = 0, right = 15, top = 0, bottom = 0 }
 config.enable_scroll_bar = true
 
 -- launch
+local mux = wezterm.mux
+wezterm.on("gui-startup", function()
+    local tab, pane, window = mux.spawn_window{}
+    window:gui_window():maximize()
+end)
 config.default_prog = { 'cmd.exe' }     -- 默认启动 cmd
 -- 启动菜单的一些启动项
 config.launch_menu = {
