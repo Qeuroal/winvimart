@@ -1,4 +1,4 @@
-# installing all completers
+# Installing Completers
 
 ## prepare (minimum installation)
 
@@ -10,19 +10,25 @@
 
    建议不要最新版
 
-- VS2022
+- 环境安装 (N选1即可)
 
-   组件:
+   - [PortableBuildTools](https://github.com/Data-Oriented-House/PortableBuildTools)
 
-   - MSVC v143 - VS 2022 C++ x64/x86 生成工...
-   - C++ Build Insights
-   - 用于 Windows 的C++ CMake工具
-   - Windows 11 SDK(10.0.22621.0)
+      直接下载[latest release](https://github.com/Data-Oriented-House/PortableBuildTools/releases/latest/download/PortableBuildTools.exe)
+
+   - VS2022
+
+      组件:
+
+      - MSVC v143 - VS 2022 C++ x64/x86 生成工具（最新版本）
+      - C++ Build Insights
+      - 用于 Windows 的 C++ CMake 工具
+      - Windows 11 SDK(10.0.22621.0)
 
 ## Quick start, installing all completers
 
 1. Install YCM plugin via [vim-plug](https://github.com/junegunn/vim-plug) or [Vundle](https://github.com/VundleVim/Vundle.vim#about)
-2. Install [Visual Studio Build Tools 2019](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=BuildTools&rel=16)
+2. Install [PortableBuildTools](https://github.com/Data-Oriented-House/PortableBuildTools/releases/latest/download/PortableBuildTools.exe) 或 [Visual Studio Build Tools 2019](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=BuildTools&rel=16)
 3. Install CMake, Vim and Python
 4. Install go, node and npm
 5. Compile YCM supporting all language
