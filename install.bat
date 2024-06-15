@@ -72,7 +72,7 @@ if "%ycmOpt%" equ "y" (
     echo The following softwares need to be installed:
     echo ^- python2 or python3^(recommended^)
     echo ^- cmake
-    echo ^- "Desktop development with C++" under workload in Visual Studio, where ycm supports MSVC 14 ^(Visual Studio 2015^) and 15 ^(2017^)
+    echo ^- Compile Environment: ^"PortableBuildTools^" OR ^"Visual Studio components^". Check the details: https://github.com/Qeuroal/winvimart/blob/master/README.md
     echo ^- ctags
 ) else (
     :: 选择非ycm补全方案

@@ -3,7 +3,16 @@ local config = {}
 
 config.color_scheme = 'OneDark (base16)'
 
-config.font = wezterm.font('JetBrains Mono', { weight = 'Regular', italic = false })
+-- config.font = wezterm.font("JetBrainsMonoNL Nerd Font", {weight="Regular", stretch="Normal", style="Normal"}) -- (AKA: JetBrainsMonoNL NF) C:\USERS\QEUROAL\APPDATA\LOCAL\MICROSOFT\WINDOWS\FONTS\JETBRAINSMONONLNERDFONT-REGULAR.TTF, DirectWrite
+config.font = wezterm.font_with_fallback({
+	-- wezterm.font("JetBrainsMonoNL Nerd Font", {weight="Regular", stretch="Normal", style="Normal"})
+	-- (AKA: JetBrainsMonoNL NF) C:\USERS\QEUROAL\APPDATA\LOCAL\MICROSOFT\WINDOWS\FONTS\JETBRAINSMONONLNERDFONT-REGULAR.TTF, DirectWrite
+	{family="JetBrainsMonoNL Nerd Font", weight="Regular", stretch="Normal", style="Normal"},
+
+	-- wezterm.font("Microsoft YaHei", {weight="Regular", stretch="Normal", style="Normal"})
+	-- (AKA: 微软雅黑) C:\WINDOWS\FONTS\MSYH.TTC, DirectWrite
+	{family="Microsoft YaHei", weight="Regular", stretch="Normal", style="Normal"}
+})
 config.font_size = 15.0
 -- 透明背景
 config.window_background_opacity = 0.95
