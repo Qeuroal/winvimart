@@ -72,7 +72,7 @@ if "%ycmOpt%" equ "y" (
     echo The following softwares need to be installed:
     echo ^- python2 or python3^(recommended^)
     echo ^- cmake
-    echo ^- Compile Environment: ^"PortableBuildTools^" 或 ^"Visual Studio 组件^"。详细请查看: https://github.com/Qeuroal/winvimart/blob/master/README.md
+    echo ^- Compile Environment: ^"PortableBuildTools^" OR ^"Visual Studio component^". Check the details: https://github.com/Qeuroal/winvimart/blob/master/README.md
     echo ^- ctags
 ) else (
     :: 选择非ycm补全方案
