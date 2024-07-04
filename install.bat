@@ -40,10 +40,12 @@ set all_proxy=http://127.0.0.1:7890
 set socket_proxy=http://127.0.0.1:7890
 
 :: dependency software
+REM 更新Microsoft.AppInstaller
+winget upgrade Microsoft.AppInstaller
 REM 安装ripgrep
 winget install BurntSushi.ripgrep.MSVC
 REM install wezterm
-winget install wezterm
+winget install wez.wezterm
 copy /y "%curDir%\assets\wezterm\.wezterm.lua" "%USERPROFILE%\.wezterm.lua"
 
 :: ycm
