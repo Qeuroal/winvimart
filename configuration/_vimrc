@@ -169,7 +169,7 @@ set completeopt=menu,menuone,noselect       " 补全时不选择第一项
 set hlsearch                " 高亮显示搜索结果
 set incsearch               " 开启实时搜索功能
 set ignorecase smartcase    " 智能大小写不敏感
-set grepprg=rg\ --vimgrep\ --smart-case\ --follow\ --hidden     " 设置grep 为 grepprg
+set grepprg=rg\ --vimgrep\ --smart-case\ --follow\ --hidden\ --glob\ '!.git/**'     " 设置grep 为 grepprg
 " <}}}
 
 " {{{> 缓存设置
@@ -345,14 +345,10 @@ endfunction
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "{{{> easymotion
 map <Space> <Plug>(easymotion-prefix)
-nmap <leader>s <Plug>(easymotion-s)
-omap <leader>s <Plug>(easymotion-s)
-vmap <leader>s <Plug>(easymotion-s)
 "<}}}
 
 "{{{> LeaderF
 nnoremap <silent> <leader>o :LeaderfFile .<CR>
-nnoremap <silent> <leader>f :LeaderfFunction<CR>
 let g:Lf_WildIgnore = {
             \ 'dir': ['.svn','.git','.hg','.vscode','.wine','.deepinwine','.oh-my-zsh'],
             \ 'file': ['*.sw?','~$*','*.bak','*.exe','*.o','*.so','*.py[co]']
@@ -629,6 +625,11 @@ endfunction
 " generate ctags based on filetype
 command! -nargs=? Gtags call s:generateTags(<f-args>)
 " <}}}
+
+"{{{> buffer management
+" delete other buffers
+command! -nargs=0 Bonly %bd | e#
+"<}}}
 "====================== 加载指令配置 ====================== <}}}
 
 
@@ -658,6 +659,10 @@ if has('win32') || has('win64') || has('win16')
 endif
 "<}}}
 
+"{{{> quickfix 设置
+" 设置 quickfix 窗口默认在最下面
+autocmd FileType qf wincmd J
+"<}}}
 "====================== 加载自动指令配置 ====================== <}}}
 
 
