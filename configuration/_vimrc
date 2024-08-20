@@ -660,6 +660,10 @@ if has('win32') || has('win64') || has('win16')
 endif
 "<}}}
 
+"{{{> quickfix 设置
+" 设置 quickfix 窗口默认在最下面
+autocmd FileType qf wincmd J
+"<}}}
 "====================== 加载自动指令配置 ====================== <}}}
 
 
