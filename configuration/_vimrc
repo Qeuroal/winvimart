@@ -4,9 +4,9 @@ set nocompatible    " VI compatible mode is disabled so that VIm things work
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " {{{> 卸载默认插件 Unplug
 function! s:deregister(repo)
-  let repo = substitute(a:repo, '[\/]\+$', '', '')
-  let name = fnamemodify(repo, ':t:s?\.git$??')
-  call remove(g:plugs, name)
+    let repo = substitute(a:repo, '[\/]\+$', '', '')
+    let name = fnamemodify(repo, ':t:s?\.git$??')
+    call remove(g:plugs, name)
 endfunction
 command! -nargs=1 -bar UnPlug call s:deregister(<args>)
 " <}}}
@@ -42,14 +42,14 @@ Plug 'preservim/vim-markdown', { 'for': ['markdown'] }      " 语法高亮, 匹�
 Plug 'mhinz/vim-startify'                           " 开始页面
 Plug 'preservim/tagbar'                             " 使用preservim/tagbar的最新版本，taglist的替代品，显示类/方法/变量
 Plug 'preservim/nerdtree'                           " 代码资源管理器
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'      " highlight	NerdTree文件类型高亮
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'      " highlight NerdTree文件类型高亮
 Plug 'Xuyuanp/nerdtree-git-plugin'                  " NerdTree显示git状态
 Plug 'tpope/vim-commentary'                         " 快速注释代码插件
 Plug 'tpope/vim-endwise'                            " if/end/endif/endfunction补全
 Plug 'tpope/vim-surround'                           " 自动增加、替换配对符的插件
 Plug 'octol/vim-cpp-enhanced-highlight'             " 高亮
 Plug 'vim-airline/vim-airline'                      " 可以取代powerline的状态栏美化插件
-Plug 'vim-airline/vim-airline-themes'             
+Plug 'vim-airline/vim-airline-themes'
 Plug 'ryanoasis/vim-devicons'                       " 文件类型图标
 Plug 'junegunn/vim-slash'                           " 优化搜索，移动光标后清除高亮
 Plug 'Shougo/echodoc.vim'                           " 补全函数时在命令栏显示函数签名
@@ -100,11 +100,11 @@ runtime macros/matchit.vim
 " <}}}
 
 " {{{> 通用设置
-let mapleader = ";"                    " 定义<leader>键
+let mapleader = ";"                     " 定义<leader>键
 set nocompatible                        " 设置不兼容原始vi模式
 filetype on                             " 设置开启文件类型侦测
 filetype plugin on                      " 设置加载对应文件类型的插件
-" set noeb                              " 关闭错误的提示
+" set noeb                                " 关闭错误的提示
 syntax enable                           " 开启语法高亮功能
 syntax on                               " 自动语法高亮
 set t_Co=256                            " 开启256色支持
@@ -136,9 +136,9 @@ endif
 set autoindent                  " 设置自动缩进
 set cindent                     " 设置使用C/C++语言的自动缩进方式
 set cinoptions=:0,g0,N-s,(0,w1  " 设置C/C++语言的具体缩进方式
-                                "  :0 表示 switch 下面的 case 语句不进行额外缩进
-                                "  g0 代表作用域声明(public:、private: 等)不额外缩进
-                                "  (0 和 w1 配合代表没结束的圆括号里的内容折行时不额外缩进
+                                "   :0 表示 switch 下面的 case 语句不进行额外缩进
+                                "   g0 代表作用域声明(public:、private: 等)不额外缩进
+                                "   (0 和 w1 配合代表没结束的圆括号里的内容折行时不额外缩进
 set smartindent                 " 智能的选择对其方式
 filetype indent on              " 自适应不同语言的智能缩进
 set expandtab                   " 将制表符<Tab>扩展为空格
@@ -152,7 +152,7 @@ set smarttab                    " 在行和段开始处使用制表符
 set backspace=2                 " 使用回车键正常处理indent,eol,start等
 set sidescroll=10               " 设置向右滚动字符数
 set nofoldenable                " 禁用折叠代码
-set smoothscroll                 " 让翻页更顺畅
+set smoothscroll                " 让翻页更顺畅
 " <}}}
 
 "{{{> conceal opts
@@ -285,9 +285,9 @@ elseif &term =~ 'xterm' || &term =~ 'screen' || &term == 'win32'
     let &t_SR = "\e[2 q"
     let &t_EI = "\e[2 q"
     " let &t_ti ..= "\e[2 q"
-    " let &t_te ..= "\e[2 q"  " 缺省 (取决于终端，通常是闪烁块状)
+    " let &t_te ..= "\e[2 q"    " 缺省 (取决于终端，通常是闪烁块状)
     let &t_ti .= "\e[2 q"
-    let &t_te .= "\e[2 q"  " 缺省 (取决于终端，通常是闪烁块状)
+    let &t_te .= "\e[2 q"       " 缺省 (取决于终端，通常是闪烁块状)
 else
     echo &term
 endif
