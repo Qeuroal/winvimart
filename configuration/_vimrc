@@ -4,9 +4,9 @@ set nocompatible    " VI compatible mode is disabled so that VIm things work
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " {{{> 卸载默认插件 Unplug
 function! s:deregister(repo)
-  let repo = substitute(a:repo, '[\/]\+$', '', '')
-  let name = fnamemodify(repo, ':t:s?\.git$??')
-  call remove(g:plugs, name)
+    let repo = substitute(a:repo, '[\/]\+$', '', '')
+    let name = fnamemodify(repo, ':t:s?\.git$??')
+    call remove(g:plugs, name)
 endfunction
 command! -nargs=1 -bar UnPlug call s:deregister(<args>)
 " <}}}
@@ -42,7 +42,7 @@ Plug 'preservim/vim-markdown', { 'for': ['markdown'] }      " 语法高亮, 匹�
 Plug 'mhinz/vim-startify'                           " 开始页面
 Plug 'preservim/tagbar'                             " 使用preservim/tagbar的最新版本，taglist的替代品，显示类/方法/变量
 Plug 'preservim/nerdtree'                           " 代码资源管理器
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'      " highlight	NerdTree文件类型高亮
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'      " highlight NerdTree文件类型高亮
 Plug 'Xuyuanp/nerdtree-git-plugin'                  " NerdTree显示git状态
 Plug 'tpope/vim-commentary'                         " 快速注释代码插件
 Plug 'tpope/vim-endwise'                            " if/end/endif/endfunction补全
@@ -152,7 +152,7 @@ set smarttab                    " 在行和段开始处使用制表符
 set backspace=2                 " 使用回车键正常处理indent,eol,start等
 set sidescroll=10               " 设置向右滚动字符数
 set nofoldenable                " 禁用折叠代码
-set smoothscroll                 " 让翻页更顺畅
+set smoothscroll                " 让翻页更顺畅
 " <}}}
 
 "{{{> conceal opts
