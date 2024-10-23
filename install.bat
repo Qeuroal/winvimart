@@ -19,6 +19,10 @@ xcopy "%curDir%\ftplugin" "%vimConfigPath%\ftplugin" /E /I /H /K /y
 xcopy "%curDir%\plugin_configuration" "%vimConfigPath%\plugin_configuration" /E /I /H /K /y
 xcopy "%curDir%\settings" "%vimConfigPath%\settings" /E /I /H /K /y
 
+:: copy bin
+mkdir "%vimConfigPath%\bin"
+xcopy "%curDir%\assets\mdctags" "%vimConfigPath%\bin" /E /I /H /K /y
+
 :: set proxy
 if not exist %USERPROFILE%\proxy.bat (
     REM echo 'set http_proxy=http://127.0.0.1:7890' >> %USERPROFILE%\proxy.bat
